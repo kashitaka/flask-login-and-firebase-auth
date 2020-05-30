@@ -3,6 +3,7 @@ from model.user import User
 # Use global variables as a Database.
 user_store = []
 
+
 class UserRepository(object):
 
     @staticmethod

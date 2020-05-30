@@ -4,6 +4,7 @@ from firebase_admin.auth import InvalidIdTokenError
 from model.user import User
 from repository.user_repository import UserRepository
 
+
 def request_loader(request):
     user_token = request.headers.get('X-Auth-Token')
     if user_token is None:
@@ -27,6 +28,7 @@ def request_loader(request):
     )
     repository.insert(new_user)
     return new_user
+
 
 def unauthorized_handler():
     return {"result": "unauthorized"}, 401
